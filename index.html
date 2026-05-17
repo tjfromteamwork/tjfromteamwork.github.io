@@ -313,4 +313,131 @@
             </div>
 
             <div class="team-card" data-dept="leadership">
-                <div class="profile-section
+                <div class="profile-section">
+                    <div class="avatar">TL</div>
+                    <div class="identity">
+                        <h3>TJ Leahy</h3>
+                        <div class="title-tag">People Business Partner</div>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    <div class="meta-row"><strong>Business Unit Partnership:</strong> Support, Product, Growth &amp; Pro Services</div>
+                    <div class="meta-row"><strong>Roots:</strong> Proud Limerick Man</div>
+                </div>
+                <div class="fun-blurb">
+                    Attracts, grows, and retains incredible talent across technical silos. Absolute specialist at managing picky hiring managers.
+                </div>
+                <div class="stat-container">
+                    <div class="stat-label"><span>Picky Manager Diplomacy</span><span>99%</span></div>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 99%;"></div></div>
+                </div>
+            </div>
+
+            <div class="team-card" data-dept="comms">
+                <div class="profile-section">
+                    <div class="avatar">DM</div>
+                    <div class="identity">
+                        <h3>Danny Murray</h3>
+                        <div class="title-tag">Head of Comms &amp; Engagement</div>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    <div class="meta-row"><strong>Focus:</strong> Internal Architecture &amp; Corporate Voice</div>
+                    <div class="meta-row"><strong>Roots:</strong> Dub living in Laois</div>
+                </div>
+                <div class="fun-blurb">
+                    Proud new Dad. Most likely to decisively declare: "The juice is simply not worth the squeeze."
+                </div>
+                <div class="stat-container">
+                    <div class="stat-label"><span>Juices Properly Squeezed</span><span>88%</span></div>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 88%;"></div></div>
+                </div>
+            </div>
+
+            <div class="team-card" data-dept="ops">
+                <div class="profile-section">
+                    <div class="avatar">DM</div>
+                    <div class="identity">
+                        <h3>Denise Marshall</h3>
+                        <div class="title-tag">Executive Assistant</div>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    <div class="meta-row"><strong>Business Unit Partnership:</strong> Executive Leadership Team</div>
+                </div>
+                <div class="fun-blurb">
+                    Has seen it all, has handled it all. The undisputed cultural core of the ecosystem—colloquially known as Miss Wonderful.
+                </div>
+                <div class="stat-container">
+                    <div class="stat-label"><span>Chaos Containment Rating</span><span>100%</span></div>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 100%;"></div></div>
+                </div>
+            </div>
+
+            <div class="team-card" data-dept="ops">
+                <div class="profile-section">
+                    <div class="avatar">CC</div>
+                    <div class="identity">
+                        <h3>Carol Cagney</h3>
+                        <div class="title-tag">Ops &amp; Payroll Specialist</div>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    <div class="meta-row"><strong>Focus:</strong> Global Payroll &amp; Operational Efficiency</div>
+                </div>
+                <div class="fun-blurb">
+                    The quiet engine room of the department. Will likely be completely mortified that TJ included her in this public app.
+                </div>
+                <div class="stat-container">
+                    <div class="stat-label"><span>Accuracy to 4 Decimal Places</span><span>100%</span></div>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 100%;"></div></div>
+                </div>
+            </div>
+
+            <div class="team-card" data-dept="ops">
+                <div class="profile-section">
+                    <div class="avatar">LM</div>
+                    <div class="identity">
+                        <h3>Laura McCarthy</h3>
+                        <div class="title-tag">People Specialist &amp; Office Manager</div>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    <div class="meta-row"><strong>Focus:</strong> Workplace Design &amp; Employee Podcast Host</div>
+                </div>
+                <div class="fun-blurb">
+                    The single most concentrated source of pure Cork energy on the team. Makes the workplace environments hum.
+                </div>
+                <div class="stat-container">
+                    <div class="stat-label"><span>Cork Concentrated Frequency</span><span>95%</span></div>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 95%;"></div></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function filterTeam(category) {
+            // Adjust active state on navigation triggers
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Highlight current button correctly
+            if (window.event && window.event.target) {
+                window.event.target.classList.add('active');
+            }
+
+            // Toggle cards dynamically
+            const cards = document.querySelectorAll('.team-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-dept') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
