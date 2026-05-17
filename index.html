@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJ Leahy | HR Business Partner &amp; Recruiter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Palette & Variables */
+        :root {
+            --bg-color: #fcf9f5;      /* Warm beige */
+            --card-bg: #ffffff;       /* Pure white for depth */
+            --text-main: #2d2a26;     /* Deep charcoal */
+            --text-muted: #615e5a;    /* Muted gray-brown */
+            --accent: #556b2f;        /* Olive/Sage Green */
+            --accent-light: #e8ece1;  /* Soft light green tint */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(85, 107, 47, 0.15);
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons/Links */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #435424;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: var(--accent-light);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background-color: #dae1ce;
+            transform: translateY(-1px);
+        }
+
+        /* Section Global Styles */
+        section {
+            margin-bottom: 45px;
+        }
+
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.75rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: rgba(85, 107, 47, 0.15);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Experience & Timeline Card Styles */
+        .company-block {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(45, 42, 38, 0.02);
+            border-left: 4px solid var(--accent);
+        }
+
+        .company-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .company-total-time {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .role-wrapper {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(85, 107, 47, 0.1);
+        }
+
+        .role-wrapper:first-of-type {
+            border-top: none;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+
+        .job-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .company-date {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .job-summary {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bullet-list li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .easter-egg {
+            font-style: italic;
+            color: var(--accent);
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* Skills Pill Tags */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(45, 42, 38, 0.02);
+            border: 1px solid rgba(85, 107, 47, 0.1);
+        }
+
+        .skill-tag.highlight {
+            background-color: var(--accent-light);
+            color: var(--accent);
+            border-color: transparent;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.25rem; }
+            body { padding: 20px 15px; }
+            .company-block { padding: 20px; }
+            .company-name { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>TJ Leahy</h1>
+            <div class="subtitle">HR Business Partner &amp; Recruiter</div>
+            <div class="contact-links">
+                <a href="mailto:tj.leahy@teamwork.com" class="btn btn-primary">Email Me</a>
+                <a href="https://www.linkedin.com/in/tjleahy/" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>About Me</h2>
+            <div class="about-text">
+                <p>Hi there! I’m TJ, a HR Business Partner and Talent Acquisition Leader with over a decade of experience helping organisations (from scrappy start-ups to global giants) attract, grow, and retain incredible talent.</p>
+                <p>Currently, I’m making things happen at <strong>Teamwork.com</strong>, a powerhouse SaaS project management company based in Cork, Ireland. I partner with amazing teams in GTM (Sales, Product and Marketing), Engineering and Customer Support, ensuring they’re set up for success with a mix of strategic workforce planning, organisational design, and good old-fashioned people care.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            
+            <div class="company-block">
+                <div class="company-name">
+                    <span>Teamwork.com</span>
+                    <span class="company-total-time">Full-time &bull; 4 yrs 2 mos</span>
+                </div>
+                
+                <div class="role-wrapper">
+                    <div class="job-title">People Business Partner</div>
+                    <div class="company-date">Nov 2023 &ndash; Present &bull; 2 yrs 7 mos</div>
+                    <div class="job-summary">Wearing two hats: providing operational HR support to Product and Customer Support teams, while owning recruitment across the entire organisation.</div>
+                </div>
+
+                <div class="role-wrapper">
+                    <div class="job-title">Talent Sourcing Lead</div>
+                    <div class="company-date">Apr 2022 &ndash; Nov 2023 &bull; 1 yr 8 mos</div>
+                    <p class="job-summary">Played a foundational role in scaling the company to 350 employees following investment from Bregal Milestone. Partnered across GTM, Engineering, and Finance functions.</p>
+                    <ul class="bullet-list">
+                        <li><strong>Company Scaling:</strong> Led talent acquisition strategies across all departments to handle fast-paced growth.</li>
+                        <li><strong>GTM Hiring:</strong> Recruited top-tier talent for Go-To-Market roles, including RevOps, Inside Sales, and customer-focused streams.</li>
+                        <li><strong>Engineering Excellence:</strong> Sourced exceptional developers with expertise in Golang, Vue, AWS, and Kubernetes.</li>
+                        <li><strong>Finance Talent Acquisition:</strong> Secured critical Finance hires (Accounting, FP&amp;A) to steady post-investment infrastructure.</li>
+                        <li><strong>Strategic &amp; Employer Sourcing:</strong> Built innovative sourcing networks and enhanced employer branding to keep candidate quality exceptional.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="company-block">
+                <div class="company-name">
+                    <span>Tigera</span>
+                    <span class="company-total-time">Full-time &bull; 1 yr 2 mos</span>
+                </div>
+                <div class="role-wrapper">
+                    <div class="job-title">Talent and Employee Success Manager</div>
+                    <div class="company-date">Mar 2021 &ndash; Apr 2022 &bull; Cork, Ireland</div>
+                    <p class="job-summary">As the first People hire in Europe, established the European operations and built the foundational presence from scratch.</p>
+                    <ul class="bullet-list">
+                        <li><strong>European Expansion:</strong> Partnered closely with the Site Director to fully set up and open the Cork office.</li>
+                        <li><strong>Technical Talent Recruitment:</strong> Targeted and hired niche technical roles within distributed systems (Go, React, AWS, GCP, Azure).</li>
+                        <li><strong>Employee Success &amp; Strategy:</strong> Spearheaded full-cycle employee care from onboarding frameworks to internal growth pathways.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="company-block">
+                <div class="company-name">
+                    <span>Teamwork.com</span>
+                    <span class="company-total-time">Full-time &bull; 3 yrs 9 mos</span>
+                </div>
+                <div class="role-wrapper">
+                    <div class="job-title">People Operations</div>
+                    <div class="company-date">Jul 2017 &ndash; Mar 2021 &bull; Cork</div>
+                    <p class="job-summary">Joined as the first dedicated recruitment hire, scaling the company completely without agency support from 90 to 260 employees.</p>
+                    <ul class="bullet-list">
+                        <li><strong>Global Recruitment Strategy:</strong> Scaled technical and commercial rosters across Europe, US, and regional hubs.</li>
+                        <li><strong>HR Partnering &amp; Culture:</strong> Managed employee relations, grievance counseling, and rolled out engagement strategies.</li>
+                        <li><strong>Operational Infrastructure:</strong> Restructured onboarding/offboarding loops and managed systems for compensation review, payroll, and benefits.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="company-block">
+                <div class="company-name">
+                    <span>Nuance Communications <span style="font-weight:300; font-size:1rem;">(Now Microsoft)</span></span>
+                    <span class="company-total-time">1 yr 5 mos</span>
+                </div>
+                <div class="role-wrapper">
+                    <div class="job-title">Talent Acquisition Consultant</div>
+                    <div class="company-date">Nov 2015 &ndash; Mar 2017 &bull; Cork</div>
+                    <p class="job-summary">Spearheaded R&amp;D and Finance recruitment pipelines across EMEA regional hubs (Dublin, Aachen, Amsterdam, Munich, etc.).</p>
+                    <p class="easter-egg">✨ "If you can find speech scientists in Merelbeke, you can do anything!"</p>
+                </div>
+            </div>
+
+            <div class="company-block">
+                <div class="company-name">
+                    <span>Cpl Jobs Ireland</span>
+                    <span class="company-total-time">2 yrs 8 mos</span>
+                </div>
+                <div class="role-wrapper">
+                    <div class="job-title">IT Recruitment Consultant</div>
+                    <div class="company-date">Sep 2013 &ndash; Apr 2016 &bull; Cork, Ireland</div>
+                    <p class="job-summary">Managed the IT desk, matching top tech talent with regional clients across Munster and broader global networks.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education &amp; Credentials</h2>
+            <div class="company-block" style="border-left-color: var(--text-muted);">
+                <div class="job-title" style="font-size:1.1rem;">MSc in Human Resources Management and Services</div>
+                <div class="company-date" style="color: var(--text-muted); margin-bottom: 15px;">University College Cork &bull; 2020</div>
+                
+                <div style="border-top: 1px dashed rgba(85, 107, 47, 0.15); padding-top: 15px;">
+                    <div class="job-title" style="font-size:1.1rem;">Certificate in Leadership and Management</div>
+                    <div class="company-date" style="color: var(--text-muted); margin-bottom: 0;">UCD Professional Academy &bull; Issued Jun 2023</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-tag highlight">🚀 Getting shit done</div>
+                <div class="skill-tag">Managing picky hiring managers</div>
+                <div class="skill-tag">Empathy &amp; Listening</div>
+                <div class="skill-tag">Making hard decisions</div>
+                <div class="skill-tag">Strategic Workforce Planning</div>
+                <div class="skill-tag">Organisational Design</div>
+                <div class="skill-tag">Global Technical Sourcing</div>
+                <div class="skill-tag">Start-Up Architecture</div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
