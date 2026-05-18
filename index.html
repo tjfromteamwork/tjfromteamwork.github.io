@@ -10,14 +10,13 @@
     
     <style>
         :root {
-            --bg-color: #fcf9f5;      /* Warm beige background */
-            --card-bg: #ffffff;       /* Card white */
-            --tw-navy: #16123f;       /* Teamwork Navy */
-            --tw-pink: #ff007f;       /* Teamwork Pink */
-            --text-main: #2d2a26;     /* Deep charcoal text */
-            --text-muted: #615e5a;    /* Muted text */
-            --accent-light: #e8ece1;  /* Accent tint */
-            --border-tint: rgba(22, 18, 63, 0.08);
+            --bg-color: #f8fafc;      /* Crisp, modern light slate background */
+            --card-bg: #ffffff;       /* Pure white card */
+            --tw-navy: #16123f;       /* Official Teamwork Navy */
+            --tw-pink: #ff007f;       /* Official Teamwork Pink */
+            --text-main: #1e293b;     /* Slate 800 */
+            --text-muted: #64748b;    /* Slate 500 */
+            --border-tint: rgba(22, 18, 63, 0.06);
         }
 
         * {
@@ -31,137 +30,139 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.5;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
         }
 
-        /* Branding Header */
+        /* Premium Header Styling */
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .logo-placeholder {
-            font-family: 'Inter', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--tw-navy);
-            letter-spacing: -1px;
-            margin-bottom: 5px;
-        }
-
-        .logo-placeholder span {
-            color: var(--tw-pink);
+        .brand-logo {
+            height: 45px;             /* Keeps the logo clean and uniform */
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 20px;
         }
 
         .hub-title {
             font-family: 'DM Serif Display', serif;
             font-size: 2.5rem;
             font-weight: 400;
-            color: var(--text-main);
-            margin-bottom: 25px;
+            color: var(--tw-navy);
+            letter-spacing: -0.5px;
+            margin-bottom: 30px;
         }
 
-        /* Interactive Filter Navigation */
+        /* Modern Filter Tabs */
         .filter-nav {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
+            gap: 8px;
+            background-color: rgba(22, 18, 63, 0.03);
+            padding: 6px;
+            border-radius: 40px;
+            border: 1px solid rgba(22, 18, 63, 0.05);
+            max-width: fit-content;
         }
 
         .filter-btn {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-tint);
-            color: var(--tw-navy);
-            padding: 10px 22px;
+            background-color: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 10px 24px;
             border-radius: 30px;
             cursor: pointer;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .filter-btn:hover {
-            border-color: var(--tw-pink);
-            transform: translateY(-1px);
+            color: var(--tw-navy);
         }
 
         .filter-btn.active {
-            background-color: var(--tw-navy);
-            color: white;
-            border-color: var(--tw-navy);
+            background-color: var(--card-bg);
+            color: var(--tw-navy);
+            box-shadow: 0 4px 12px rgba(22, 18, 63, 0.08);
         }
 
-        /* Dynamic Grid Layout */
+        /* Clean Matrix Grid */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
         }
 
-        /* Card Architecture */
+        /* Sleek Dashboard Cards */
         .team-card {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 4px 20px rgba(22, 18, 63, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             border: 1px solid var(--border-tint);
             display: flex;
             flex-direction: column;
-            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
         .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(22, 18, 63, 0.08);
-            border-color: rgba(255, 0, 127, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(22, 18, 63, 0.1), 0 10px 10px -5px rgba(22, 18, 63, 0.04);
+            border-color: rgba(255, 0, 127, 0.2);
         }
 
-        /* Profile Block Layout */
+        /* Profile Portrait Layout */
         .profile-section {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 20px;
+            margin-bottom: 24px;
         }
 
         .avatar {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            object-fit: cover;
+            object-fit: cover;        /* This forces random photo proportions to square nicely */
             flex-shrink: 0;
-            border: 2px solid white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 14px rgba(22, 18, 63, 0.12);
+            background-color: #f1f5f9;
         }
 
         .identity h3 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--tw-navy);
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .title-tag {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--tw-pink);
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.75px;
         }
 
-        /* Details & Coverage lists */
+        /* Details */
         .meta-info {
             font-size: 0.9rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             flex-grow: 1;
         }
 
@@ -172,38 +173,41 @@
 
         .meta-row strong {
             color: var(--tw-navy);
+            font-weight: 600;
         }
 
         .fun-blurb {
-            background-color: var(--bg-color);
-            padding: 12px 15px;
-            border-radius: 10px;
+            background-color: #f8fafc;
+            padding: 16px;
+            border-radius: 12px;
             font-size: 0.9rem;
             font-style: italic;
-            color: var(--text-main);
-            border-left: 3px solid var(--tw-pink);
+            color: #334155;
+            border-left: 4px solid var(--tw-pink);
             margin-top: auto;
         }
 
-        /* Skill Meter / Fun Slider Gauge */
+        /* Metric Sliders */
         .stat-container {
-            margin-top: 15px;
-            padding-top: 12px;
-            border-top: 1px solid var(--border-tint);
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #f1f5f9;
         }
 
         .stat-label {
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 700;
             color: var(--tw-navy);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             display: flex;
             justify-content: space-between;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .stat-bar-bg {
-            background-color: rgba(22, 18, 63, 0.05);
-            height: 6px;
+            background-color: #f1f5f9;
+            height: 8px;
             border-radius: 10px;
             overflow: hidden;
         }
@@ -214,10 +218,10 @@
             border-radius: 10px;
         }
 
-        /* Responsive UI styling */
         @media (max-width: 680px) {
             .hub-title { font-size: 2rem; }
             .team-grid { grid-template-columns: 1fr; }
+            .filter-nav { max-width: 100%; flex-direction: column; border-radius: 16px; }
         }
     </style>
 </head>
@@ -226,9 +230,8 @@
     <div class="container">
         
         <header>
-    <img src="teamwork.jpeg" alt="Teamwork.com Logo" style="max-width: 220px; height: auto; margin-bottom: 15px;">
-    <h1 class="hub-title">People Operations Directory</h1>
-            <h1 class="hub-title">People Team Directory</h1>
+            <img src="teamwork.jpeg" alt="Teamwork.com Logo" class="brand-logo">
+            <h1 class="hub-title">People Operations Directory</h1>
             
             <div class="filter-nav">
                 <button class="filter-btn active" onclick="filterTeam('all')">Show All</button>
@@ -249,7 +252,7 @@
                     </div>
                 </div>
                 <div class="meta-info">
-                    <div class="meta-row"><strong>Business Unit Partnership:</strong> Executive Leadership Team</div>
+                    <div class="meta-row"><strong>Partnership:</strong> Executive Leadership Team</div>
                     <div class="meta-row"><strong>Roots:</strong> Sligo Man</div>
                 </div>
                 <div class="fun-blurb">
@@ -270,7 +273,7 @@
                     </div>
                 </div>
                 <div class="meta-info">
-                    <div class="meta-row"><strong>Business Unit Partnership:</strong> GTM (Sales, Marketing, Customer Success)</div>
+                    <div class="meta-row"><strong>Partnership:</strong> GTM (Sales, Marketing, CS)</div>
                 </div>
                 <div class="fun-blurb">
                     Our resident performance management nerd. Alleged tennis pro (sources unverified, but context clues support it).
@@ -290,7 +293,7 @@
                     </div>
                 </div>
                 <div class="meta-info">
-                    <div class="meta-row"><strong>Business Unit Partnership:</strong> Finance &amp; Engineering</div>
+                    <div class="meta-row"><strong>Partnership:</strong> Finance &amp; Engineering</div>
                     <div class="meta-row"><strong>Roots:</strong> Galway Man</div>
                 </div>
                 <div class="fun-blurb">
@@ -311,7 +314,7 @@
                     </div>
                 </div>
                 <div class="meta-info">
-                    <div class="meta-row"><strong>Business Unit Partnership:</strong> Support, Product, Growth &amp; Pro Services</div>
+                    <div class="meta-row"><strong>Partnership:</strong> Support, Product, Growth &amp; Pro Services</div>
                     <div class="meta-row"><strong>Roots:</strong> Proud Limerick Man</div>
                 </div>
                 <div class="fun-blurb">
@@ -353,7 +356,7 @@
                     </div>
                 </div>
                 <div class="meta-info">
-                    <div class="meta-row"><strong>Business Unit Partnership:</strong> Executive Leadership Team</div>
+                    <div class="meta-row"><strong>Partnership:</strong> Executive Leadership Team</div>
                 </div>
                 <div class="fun-blurb">
                     Has seen it all, has handled it all. The undisputed cultural core of the ecosystem—colloquially known as Miss Wonderful.
@@ -409,16 +412,13 @@
 
     <script>
         function filterTeam(category) {
-            // Adjust active state on navigation triggers
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             
-            // Highlight current button correctly
             if (window.event && window.event.target) {
                 window.event.target.classList.add('active');
             }
 
-            // Toggle cards dynamically
             const cards = document.querySelectorAll('.team-card');
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-dept') === category) {
