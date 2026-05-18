@@ -136,22 +136,11 @@
             width: 70px;
             height: 70px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--tw-navy), #3b3582);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.6rem;
+            object-fit: cover;
             flex-shrink: 0;
             border: 2px solid white;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
-        /* Specific colorful accents for distinct roles */
-        .team-card[data-dept="leadership"] .avatar { background: linear-gradient(135deg, var(--tw-navy), #ff007f); }
-        .team-card[data-dept="ops"] .avatar { background: linear-gradient(135deg, #556b2f, #8fbc8f); }
-        .team-card[data-dept="comms"] .avatar { background: linear-gradient(135deg, #d2691e, #ff8c00); }
 
         .identity h3 {
             font-size: 1.25rem;
@@ -252,7 +241,7 @@
             
             <div class="team-card" data-dept="leadership">
                 <div class="profile-section">
-                    <div class="avatar">RK</div>
+                    <img src="richard.jpg" class="avatar" alt="Richard">
                     <div class="identity">
                         <h3>Richard Kilfeather</h3>
                         <div class="title-tag">Chief People Officer</div>
@@ -273,7 +262,7 @@
 
             <div class="team-card" data-dept="leadership">
                 <div class="profile-section">
-                    <div class="avatar">EO</div>
+                    <img src="emer.png" class="avatar" alt="Emer">
                     <div class="identity">
                         <h3>Emer O'Driscoll</h3>
                         <div class="title-tag">People Business Partner</div>
@@ -293,7 +282,7 @@
 
             <div class="team-card" data-dept="ops">
                 <div class="profile-section">
-                    <div class="avatar">SS</div>
+                    <img src="shane.png" class="avatar" alt="Shane">
                     <div class="identity">
                         <h3>Shane Smith</h3>
                         <div class="title-tag">People Operations BP</div>
@@ -314,7 +303,7 @@
 
             <div class="team-card" data-dept="leadership">
                 <div class="profile-section">
-                    <div class="avatar">TL</div>
+                    <img src="tj.jpg" class="avatar" alt="TJ">
                     <div class="identity">
                         <h3>TJ Leahy</h3>
                         <div class="title-tag">People Business Partner</div>
@@ -335,7 +324,7 @@
 
             <div class="team-card" data-dept="comms">
                 <div class="profile-section">
-                    <div class="avatar">DM</div>
+                    <img src="danny.png" class="avatar" alt="Danny">
                     <div class="identity">
                         <h3>Danny Murray</h3>
                         <div class="title-tag">Head of Comms &amp; Engagement</div>
@@ -356,7 +345,7 @@
 
             <div class="team-card" data-dept="ops">
                 <div class="profile-section">
-                    <div class="avatar">DM</div>
+                    <img src="denise.png" class="avatar" alt="Denise">
                     <div class="identity">
                         <h3>Denise Marshall</h3>
                         <div class="title-tag">Executive Assistant</div>
@@ -376,7 +365,7 @@
 
             <div class="team-card" data-dept="ops">
                 <div class="profile-section">
-                    <div class="avatar">CC</div>
+                    <img src="carol.png" class="avatar" alt="Carol">
                     <div class="identity">
                         <h3>Carol Cagney</h3>
                         <div class="title-tag">Ops &amp; Payroll Specialist</div>
@@ -396,7 +385,7 @@
 
             <div class="team-card" data-dept="ops">
                 <div class="profile-section">
-                    <div class="avatar">LM</div>
+                    <img src="laura.png" class="avatar" alt="Laura">
                     <div class="identity">
                         <h3>Laura McCarthy</h3>
                         <div class="title-tag">People Specialist &amp; Office Manager</div>
